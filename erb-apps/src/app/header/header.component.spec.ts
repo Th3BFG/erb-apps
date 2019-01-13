@@ -40,6 +40,6 @@ describe('HeaderComponent', () => {
       const fixture = TestBed.createComponent(HeaderComponent);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('img')).toBeTruthy();
+      expect(compiled.querySelector('div img')).toBeTruthy();
     });
 });
