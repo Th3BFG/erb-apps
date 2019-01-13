@@ -1,0 +1,19 @@
+<button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+    <button mat-menu-item>
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>arrow_downward</mat-icon>
+        <span>Downloads</span>
+    </button>
+    <button mat-menu-item>
+        <mat-icon>info</mat-icon>
+        <span>About</span>
+    </button>
+</mat-menu>
+<img src="assets/img/logo.png">
+<h3>{{subtitle}}</h3>
