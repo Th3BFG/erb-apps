@@ -7,6 +7,9 @@ import { MatModule } from './mat.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { BlogComponent } from './blog/blog.component';
+import { AboutComponent } from './about/about.component';
+import { DownloadsComponent } from './downloads/downloads.component';
 
 @NgModule({
   imports: [
@@ -19,7 +22,10 @@ import { HeaderComponent } from './header/header.component';
   entryComponents: [AppComponent],
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    BlogComponent,
+    DownloadsComponent,
+    AboutComponent
   ],
   bootstrap: [AppComponent],
   providers: []
