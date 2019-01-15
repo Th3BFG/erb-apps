@@ -9,6 +9,8 @@ import { BlogService } from '../services/blog.service';
 })
 export class BlogComponent implements OnInit {
   blogPosts: BlogPost[];
+  title = 'Welcome to ERB Applications';
+  subtitle = 'Down To Earth Solutions';
 
   constructor(private blogService: BlogService) { }
 

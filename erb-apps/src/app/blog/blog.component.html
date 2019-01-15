@@ -1,5 +1,6 @@
 <div class="page">
-    <h1>THIS IS THE BLOG SPACE</h1>
+    <h1>{{title}}</h1>
+    <h3>{{subtitle}}</h3>
     <ul class="blog">
         <li *ngFor="let post of blogPosts" (click)="onSelect(post)">
             <mat-card>

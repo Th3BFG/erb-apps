@@ -7,7 +7,6 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.less']
 })
 export class HeaderComponent {
-  subtitle = 'Down To Earth Solutions';
   constructor(private router: Router) {}
   goHome() {
     this.router.navigate(['blog']);
