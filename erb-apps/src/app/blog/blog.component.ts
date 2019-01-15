@@ -1,8 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { BlogPost } from '../models/blogpost';
+import { BlogService } from '../services/blog.service';
 
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.less']
 })
-export class BlogComponent {}
+export class BlogComponent implements OnInit {
+  blogPosts: BlogPost[];
+
+  constructor(private blogService: BlogService) { }
+
+  ngOnInit(): void {
+    this.getBlogPosts();
+  }
+
+  onSelect(post: BlogPost): void {
+    throw new Error('Method not implemented.');
+  }
+
+  getBlogPosts(): void {
+    this.blogService.getBlogPosts()
+      .subscribe(posts => this.blogPosts = posts);
+  }
+}

@@ -1,3 +1,10 @@
 <div class="page">
     <h1>THIS IS THE BLOG SPACE</h1>
+    <ul class="blog">
+        <li *ngFor="let post of blogPosts" (click)="onSelect(post)">
+            <mat-card>
+                <mat-card-title>{{post.title}}</mat-card-title>
+            </mat-card>
+        </li>
+    </ul>
 </div>
