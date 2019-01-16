@@ -15,15 +15,15 @@ export class BlogComponent implements OnInit {
   constructor(private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.getBlogPosts();
+    this.getBlogPostsForDisplay();
   }
 
   onSelect(post: BlogPost): void {
     throw new Error('Method not implemented.');
   }
 
-  getBlogPosts(): void {
-    this.blogService.getBlogPosts()
+  getBlogPostsForDisplay(): void {
+    this.blogService.getBlogPostsInReverse()
       .subscribe(posts => this.blogPosts = posts);
   }
 }

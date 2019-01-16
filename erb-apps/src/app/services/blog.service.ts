@@ -11,8 +11,9 @@ export class BlogService {
 
   constructor() { }
 
-  getBlogPosts(): Observable<BlogPost[]> {
+  getBlogPostsInReverse(): Observable<BlogPost[]> {
     // TODO: log what happens when this fails.
-    return of(POSTS);
+    const reversedPosts = POSTS.slice().reverse();
+    return of(reversedPosts);
   }
 }
