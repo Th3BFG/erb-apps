@@ -7,9 +7,9 @@ import { BlogPost } from '../models/blogpost';
 describe('BlogService', () => {
     let service: BlogService;
 
-    beforeEach(async(() => {
-      service = new BlogService(POSTS);
-    }));
+    beforeEach(() => {
+      service = new BlogService();
+    });
 
     it('should create the blog service', () => {
       expect(service).toBeTruthy();
@@ -20,5 +20,5 @@ describe('BlogService', () => {
         let posts: BlogPost[];
         service.getBlogPostsInReverse().subscribe(subVal => posts = subVal);
         expect(posts).toEqual(reversed);
-      });
+    });
 });
