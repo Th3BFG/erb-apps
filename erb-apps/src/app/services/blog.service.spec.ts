@@ -1,7 +1,6 @@
-import { TestBed, async, inject } from '@angular/core/testing';
+import { async } from '@angular/core/testing';
 import { BlogService } from './blog.service';
 import { POSTS } from '../models/mock-posts';
-import { Observable, of } from 'rxjs';
 import { BlogPost } from '../models/blogpost';
 
 
@@ -9,7 +8,7 @@ describe('BlogService', () => {
     let service: BlogService;
 
     beforeEach(async(() => {
-      service = new BlogService();
+      service = new BlogService(POSTS);
     }));
 
     it('should create the blog service', () => {

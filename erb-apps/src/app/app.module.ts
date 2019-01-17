@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
+import { BlogService } from './services/blog.service';
 
 @NgModule({
   imports: [
@@ -28,6 +29,6 @@ import { DownloadsComponent } from './downloads/downloads.component';
     AboutComponent
   ],
   bootstrap: [AppComponent],
-  providers: []
+  providers: [BlogService]
 })
 export class AppModule { }

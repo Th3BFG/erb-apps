@@ -2,6 +2,13 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BlogComponent } from './blog.component';
 import { MatModule } from '../mat.module';
+import { BlogService } from '../services/blog.service';
+import { Observable, of } from 'rxjs';
+import { BlogPost } from '../models/blogpost';
+
+class MockBlogService {
+  getBlogPostsInReverse() { return new Observable(); }
+}
 
 describe('BlogComponent', () => {
     beforeEach(async(() => {
@@ -13,6 +20,9 @@ describe('BlogComponent', () => {
         declarations: [
             BlogComponent
         ],
+        providers: [
+          { provide: BlogService, useClass: MockBlogService }
+        ]
       }).compileComponents();
     }));
 
