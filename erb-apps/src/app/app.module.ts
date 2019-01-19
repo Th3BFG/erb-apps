@@ -11,12 +11,14 @@ import { BlogComponent } from './blog/blog.component';
 import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { BlogService } from './services/blog.service';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     CommonModule,
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AppRoutingModule,
     MatModule
   ],
@@ -29,6 +31,6 @@ import { BlogService } from './services/blog.service';
     AboutComponent
   ],
   bootstrap: [AppComponent],
-  providers: [BlogService]
+  providers: [BlogService, HttpClient]
 })
 export class AppModule { }

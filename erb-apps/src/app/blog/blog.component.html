@@ -4,7 +4,8 @@
     <ul class="blog">
         <li *ngFor="let post of blogPosts" (click)="onSelect(post)">
             <mat-card>
-                <mat-card-title>{{post.title}}</mat-card-title>
+                <mat-card-title>{{post.post_subject}} by {{post.user}} on {{post.date_posted | date}}</mat-card-title>
+                <mat-card-content>{{post.post_body}}</mat-card-content>
             </mat-card>
         </li>
     </ul>

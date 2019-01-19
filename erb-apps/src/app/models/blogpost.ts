@@ -1,7 +1,8 @@
-export class BlogPost {
+export interface BlogPost {
     id: number;
-    title: string;
-    author: string;
-    postDate: Date;
-    postBody: string;
+    date_posted: Date;
+    user: string;
+    post_subject: string;
+    post_body: string;
+    // TODO: fix data model naming before prod
 }
