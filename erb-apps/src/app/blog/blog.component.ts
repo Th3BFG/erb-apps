@@ -20,7 +20,7 @@ export class BlogComponent implements OnInit {
   }
 
   onSelect(post: BlogPost): void {
-    console.log(post.post_subject);
+    console.log(post.Subject);
   }
 
   getBlogPostsForDisplay(): void {
