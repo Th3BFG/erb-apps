@@ -1,13 +1,12 @@
-<div class="page">
+<div id="page">
     <h1>{{title}}</h1>
     <h3>{{subtitle}}</h3>
     <button mat-button (click)="createPost()">Create Post</button>
-    <ul class="blog">
-        <li *ngFor="let post of blogPosts" (click)="onSelect(post)">
-            <mat-card>
-                <mat-card-title>{{post.subject}} by {{post.poster}} on {{post.dateposted | date}}</mat-card-title>
-                <mat-card-content>{{post.body}}</mat-card-content>
-            </mat-card>
-        </li>
-    </ul>
+    <div class="blog">
+        <mat-card *ngFor="let post of blogPosts" (click)="onSelect(post)">
+            <mat-card-title class="post-title">{{post.subject}} by {{post.poster}} on {{post.dateposted | date}}</mat-card-title>
+            <mat-divider class="post-divide"></mat-divider>
+            <mat-card-content class="post-body">{{post.body}}</mat-card-content>
+        </mat-card>
+    </div>
 </div>

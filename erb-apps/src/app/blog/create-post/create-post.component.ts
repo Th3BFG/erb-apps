@@ -17,12 +17,11 @@ export class CreatePostComponent implements OnInit {
   }
 
   submit(subject: string, body: string): void {
-    this.blogPost = { dateposted: new Date('2019-01-01'),
+    this.blogPost = { dateposted: new Date('2019-01-01'), // TODO: need actual date. Here or let DB do it?
                     poster: 'Ben', // TODO: Need User from auth
                     subject: subject,
                     body: body };
-    this.blogService.insertBlogPost(this.blogPost).subscribe();
-    alert('Post created');
-    this.router.navigate(['blog']);
+    this.blogService.insertBlogPost(this.blogPost)
+      .subscribe(o => this.router.navigate(['blog']));
   }
 }

@@ -30,6 +30,6 @@ export class BlogComponent implements OnInit {
 
   getBlogPostsForDisplay(): void {
     this.blogService.getAllBlogPosts()
-      .subscribe(posts => this.blogPosts = posts);
+      .subscribe(posts => this.blogPosts = posts.reverse());
   }
 }
