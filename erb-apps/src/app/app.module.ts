@@ -12,6 +12,7 @@ import { AboutComponent } from './about/about.component';
 import { DownloadsComponent } from './downloads/downloads.component';
 import { BlogService } from './services/blog.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CreatePostComponent } from './blog/create-post/create-post.component';
 
 @NgModule({
   imports: [
@@ -27,6 +28,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     AppComponent,
     HeaderComponent,
     BlogComponent,
+    CreatePostComponent,
     DownloadsComponent,
     AboutComponent
   ],

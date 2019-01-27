@@ -1,7 +1,7 @@
 export interface BlogPost {
-    Id: number;
-    DatePosted: Date;
-    User: string;
-    Subject: string;
-    Body: string;
+    id?: number;
+    dateposted: Date;
+    poster: string;
+    subject: string;
+    body: string;
 }

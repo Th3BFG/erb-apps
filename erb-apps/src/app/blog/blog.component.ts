@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../models/blogpost';
 import { BlogService } from '../services/blog.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blog',
@@ -12,15 +13,19 @@ export class BlogComponent implements OnInit {
   title = 'Welcome to ERB Applications';
   subtitle = 'Down To Earth Solutions';
 
-  constructor(private blogService: BlogService) { }
+  constructor(private blogService: BlogService, private router: Router) { }
 
   ngOnInit(): void {
     this.getBlogPostsForDisplay();
-    console.log(this.blogPosts);
+  }
+
+  createPost(): void {
+    // TODO: Open new page, but this should be a modal
+    this.router.navigate(['post']);
   }
 
   onSelect(post: BlogPost): void {
-    console.log(post.Subject);
+    console.log(post.subject);
   }
 
   getBlogPostsForDisplay(): void {

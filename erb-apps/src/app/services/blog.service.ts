@@ -23,7 +23,7 @@ export class BlogService {
   }
 
   updateBlogPost(post: BlogPost): Observable<void> {
-    return this.http.put<void>('http://localhost:8000/api/posts/' + post.Id, post);
+    return this.http.put<void>('http://localhost:8000/api/posts/' + post.id, post);
   }
 
   deleteBlogPost(id: number) {

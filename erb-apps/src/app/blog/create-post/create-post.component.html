@@ -1,0 +1,9 @@
+<div>
+    <mat-form-field >
+        <input #subject matInput placeholder="Subject">
+    </mat-form-field>
+    <mat-form-field >
+        <textarea #body matInput placeholder="Body"></textarea>
+    </mat-form-field>
+    <button mat-button (click)="submit(subject.value, body.value)">Submit</button>
+</div>
