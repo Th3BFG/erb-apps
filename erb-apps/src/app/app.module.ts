@@ -13,6 +13,7 @@ import { DownloadsComponent } from './downloads/downloads.component';
 import { BlogService } from './services/blog.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CreatePostComponent } from './blog/create-post/create-post.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   imports: [
@@ -21,7 +22,8 @@ import { CreatePostComponent } from './blog/create-post/create-post.component';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
-    MatModule
+    MatModule,
+    NgxPaginationModule
   ],
   entryComponents: [AppComponent],
   declarations: [

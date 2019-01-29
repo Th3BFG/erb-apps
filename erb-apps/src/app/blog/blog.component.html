@@ -5,12 +5,13 @@
         <mat-card-content>
             <button mat-button (click)="createPost()">Create Post</button>
             <div class="blog">
-                <mat-card class="post-card" *ngFor="let post of blogPosts" (click)="onSelect(post)">
+                <mat-card class="post-card" *ngFor="let post of blogPosts | paginate: { itemsPerPage: 5, currentPage: page }" (click)="onSelect(post)">
                     <mat-card-title class="post-title">{{post.subject}}</mat-card-title>
                     <mat-card-subtitle>By {{post.poster}} on {{post.dateposted | date}}</mat-card-subtitle>
                     <mat-divider class="post-divide"></mat-divider>
                     <mat-card-content class="post-body">{{post.body}}</mat-card-content>
                 </mat-card>
+                <pagination-controls (pageChange)="page = $event"></pagination-controls>
             </div>
         </mat-card-content>
     </mat-card>

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog.component.less'],
 })
 export class BlogComponent implements OnInit {
+  page = 1;
   blogPosts: BlogPost[];
   title = 'Welcome to ERB Applications';
   subtitle = 'Down To Earth Solutions';
