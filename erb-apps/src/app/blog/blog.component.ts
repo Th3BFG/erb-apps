@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../models/blogpost';
-import { BlogService } from '../services/blog.service';
+import { BlogService } from '../services/blog/blog.service';
 import { Router } from '@angular/router';
+import { ModalService } from '../services/modal/modal.service';
+import { PostEditorComponent } from './post-editor/post-editor.component';
 
 @Component({
   selector: 'app-blog',
@@ -9,20 +11,22 @@ import { Router } from '@angular/router';
   styleUrls: ['./blog.component.less'],
 })
 export class BlogComponent implements OnInit {
-  page = 1;
-  blogPosts: BlogPost[];
-  title = 'Welcome to ERB Applications';
-  subtitle = 'Down To Earth Solutions';
+  _page = 1;
+  _blogPosts: BlogPost[];
+  _title = 'Welcome to ERB Applications';
+  _subtitle = 'Down To Earth Solutions';
 
-  constructor(private blogService: BlogService, private router: Router) { }
+  constructor(private blogService: BlogService,
+              private modalService: ModalService,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.getBlogPostsForDisplay();
   }
 
   createPost(): void {
-    // TODO: Open new page, but this should be a modal
-    this.router.navigate(['post']);
+    // TODO: Consider inputs
+    this.modalService.init(PostEditorComponent, {}, {});
   }
 
   onSelect(post: BlogPost): void {
@@ -31,6 +35,6 @@ export class BlogComponent implements OnInit {
 
   getBlogPostsForDisplay(): void {
     this.blogService.getAllBlogPosts()
-      .subscribe(posts => this.blogPosts = posts.reverse());
+      .subscribe(posts => this._blogPosts = posts.reverse());
   }
 }

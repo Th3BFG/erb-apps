@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { BlogPost } from '../models/blogpost';
-import { POSTS } from '../models/mock-posts';
+import { BlogPost } from '../../models/blogpost';
 
 @Injectable()
 export class BlogService {

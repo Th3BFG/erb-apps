@@ -2,7 +2,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { BlogComponent } from './blog.component';
 import { MatModule } from '../mat.module';
-import { BlogService } from '../services/blog.service';
+import { BlogService } from '../services/blog/blog.service';
 import { Observable, of } from 'rxjs';
 import { BlogPost } from '../models/blogpost';
 
