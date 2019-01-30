@@ -31,9 +31,8 @@ export class PostEditorComponent implements OnInit {
   }
 
   disposeAndRefresh(): void {
+    this.modalService.dispose();
     // TODO: Get better method of refreshing posts.
-    this.router.navigate(['blog']).then(function () {
-      this.modalService.dispose();
-    });
+    //this.router.navigate(['blog'])
   }
 }
