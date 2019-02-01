@@ -5,27 +5,27 @@ import { BlogPost } from '../../models/blogpost';
 
 @Injectable()
 export class BlogService {
-  private _blogPosts: BlogPost[];
+  readonly API_URL: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { this.API_URL = 'http://localhost:8000/api'; }
 
   getAllBlogPosts(): Observable<BlogPost[]> {
-    return this.http.get<BlogPost[]>('http://localhost:8000/api/posts');
+    return this.http.get<BlogPost[]>(`${this.API_URL}/posts`);
   }
 
   getBlogPost(id: number): Observable<BlogPost> {
-    return this.http.get<BlogPost>('http://localhost:8000/api/posts/' + id);
+    return this.http.get<BlogPost>(`${this.API_URL}/posts/${id}`);
   }
 
   insertBlogPost(post: BlogPost): Observable<BlogPost> {
-    return this.http.post<BlogPost>('http://localhost:8000/api/posts/', post);
+    return this.http.post<BlogPost>(`${this.API_URL}/posts`, post);
   }
 
   updateBlogPost(post: BlogPost): Observable<void> {
-    return this.http.put<void>('http://localhost:8000/api/posts/' + post.id, post);
+    return this.http.put<void>(`${this.API_URL}/posts/${post.id}`, post);
   }
 
   deleteBlogPost(id: number) {
-    return this.http.delete('http://localhost:8000/api/posts/' + id);
+    return this.http.delete(`${this.API_URL}/posts/${id}`);
   }
 }

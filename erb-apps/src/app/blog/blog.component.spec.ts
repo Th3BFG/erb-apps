@@ -5,9 +5,12 @@ import { MatModule } from '../mat.module';
 import { BlogService } from '../services/blog/blog.service';
 import { Observable, of } from 'rxjs';
 import { BlogPost } from '../models/blogpost';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { ModalService } from '../services/modal/modal.service';
+import { DomService } from '../services/dom/dom.service';
 
 class MockBlogService {
-  getBlogPostsInReverse() { return new Observable(); }
+  getAllBlogPosts() { return new Observable<BlogPost[]>(); }
 }
 
 describe('BlogComponent', () => {
@@ -15,12 +18,15 @@ describe('BlogComponent', () => {
       TestBed.configureTestingModule({
         imports: [
           RouterTestingModule,
-          MatModule
+          MatModule,
+          NgxPaginationModule
         ],
         declarations: [
             BlogComponent
         ],
         providers: [
+          ModalService,
+          DomService,
           { provide: BlogService, useClass: MockBlogService }
         ]
       }).compileComponents();
@@ -32,17 +38,17 @@ describe('BlogComponent', () => {
       expect(blog).toBeTruthy();
     });
 
-    it('should render subtitle in a h1 tag', () => {
+    it('should render subtitle in a mat-card-title tag', () => {
       const fixture = TestBed.createComponent(BlogComponent);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('h1').textContent).toContain('Welcome to ERB Applications');
+      expect(compiled.querySelector('mat-card-title').textContent).toContain('Welcome to ERB Applications');
     });
 
-    it('should render subtitle in a h3 tag', () => {
+    it('should render subtitle in a mat-card-subtitle tag', () => {
       const fixture = TestBed.createComponent(BlogComponent);
       fixture.detectChanges();
       const compiled = fixture.debugElement.nativeElement;
-      expect(compiled.querySelector('h3').textContent).toContain('Down To Earth Solutions');
+      expect(compiled.querySelector('mat-card-subtitle').textContent).toContain('Down To Earth Solutions');
     });
 });
