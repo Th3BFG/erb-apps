@@ -1,6 +1,5 @@
 import { async, TestBed, getTestBed } from '@angular/core/testing';
 import { BlogService } from './blog.service';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MatModule } from '../../mat.module';
 import { HttpTestingController, HttpClientTestingModule } from '@angular/common/http/testing';
 import { POSTS } from '../../models/mock-posts';
@@ -8,12 +7,11 @@ import { POSTS } from '../../models/mock-posts';
 describe('BlogService', () => {
     let _service: BlogService;
     let _httpMock: HttpTestingController;
-    let _injector;
+    let _injector: TestBed;
 
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          RouterTestingModule,
           MatModule,
           HttpClientTestingModule,
         ],
@@ -29,6 +27,10 @@ describe('BlogService', () => {
 
     afterEach(() => {
       _httpMock.verify();
+    });
+
+    it('should instantiate without issue', () => {
+      expect(_service).toBeTruthy();
     });
 
     it('should make a GET request to /posts', () => {

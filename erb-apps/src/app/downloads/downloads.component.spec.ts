@@ -1,5 +1,4 @@
 import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { DownloadsComponent } from './downloads.component';
 import { MatModule } from '../mat.module';
 
@@ -7,7 +6,6 @@ describe('DownloadsComponent', () => {
     beforeEach(async(() => {
       TestBed.configureTestingModule({
         imports: [
-          RouterTestingModule,
           MatModule
         ],
         declarations: [

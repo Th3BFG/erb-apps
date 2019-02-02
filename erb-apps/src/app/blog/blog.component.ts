@@ -17,8 +17,7 @@ export class BlogComponent implements OnInit {
   _subtitle = 'Down To Earth Solutions';
 
   constructor(private blogService: BlogService,
-              private modalService: ModalService,
-              private router: Router) { }
+              private modalService: ModalService) { }
 
   ngOnInit(): void {
     this.getBlogPostsForDisplay();

@@ -2,7 +2,8 @@ import { Injectable,
         ComponentFactoryResolver,
         ApplicationRef,
         Injector,
-        EmbeddedViewRef } from '@angular/core';
+        EmbeddedViewRef,
+        ComponentRef} from '@angular/core';
 
 @Injectable()
 export class DomService {
@@ -15,9 +16,10 @@ export class DomService {
     ) { }
 
     public appendComponent(parentId: string, child: any, childConfig?: ChildConfig) {
-        this._childComponentRef = this.componentFactoryResolver
-            .resolveComponentFactory(child)
-            .create(this.injector);
+        if (parentId === undefined || child === undefined) {
+            throw new Error('Modal requires valid parentId and child component');
+        }
+        this._childComponentRef = this.createComponentRef(child);
         this.applyConfig(childConfig, this._childComponentRef);
         this.appRef.attachView(this._childComponentRef.hostView);
 
@@ -45,6 +47,12 @@ export class DomService {
         for (const i of outputKeys) {
           componentRef.instance[i] = outputKeys[i];
         }
+    }
+
+    private createComponentRef(child: any): ComponentRef<any> {
+        return this.componentFactoryResolver
+            .resolveComponentFactory(child)
+            .create(this.injector);
     }
 }
 
