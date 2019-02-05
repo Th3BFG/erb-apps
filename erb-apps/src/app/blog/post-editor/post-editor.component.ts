@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { ModalService } from 'src/app/services/modal/modal.service';
 
 @Component({
-  selector: 'app-create-post',
+  selector: 'app-post-editor',
   templateUrl: './post-editor.component.html',
   styleUrls: ['./post-editor.component.less'],
 })
@@ -22,8 +22,12 @@ export class PostEditorComponent implements OnInit {
                     poster: 'Ben', // TODO: Need User from auth
                     subject: subject,
                     body: body };
-    this.blogService.insertBlogPost(this.blogPost)
-      .subscribe(o => this.disposeAndRefresh());
+    if (this.blogPost.subject && this.blogPost.body) {
+      this.blogService.insertBlogPost(this.blogPost)
+        .subscribe(o => this.disposeAndRefresh());
+    } else {
+      console.log('bad post');
+    }
   }
 
   cancel(): void {
