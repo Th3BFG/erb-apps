@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { BlogPost } from '../../models/blogpost';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 export class BlogService {
   readonly API_URL: string;
 
-  constructor(private http: HttpClient) { this.API_URL = 'http://localhost:8000/api'; }
+  constructor(private http: HttpClient) { this.API_URL = environment.apiUrl; }
 
   getAllBlogPosts(): Observable<BlogPost[]> {
     return this.http.get<BlogPost[]>(`${this.API_URL}/posts`);
