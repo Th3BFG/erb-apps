@@ -1,0 +1,11 @@
+@import '~@angular/material/theming';
+
+$erb-theme-primary: mat-palette($mat-green);
+$erb-theme-accent : mat-palette($mat-amber);
+$erb-theme-warn   : mat-palette($mat-red);
+
+$erb-theme: mat-light-theme(
+    $erb-theme-primary,
+    $erb-theme-accent,
+    $erb-theme-warn
+);

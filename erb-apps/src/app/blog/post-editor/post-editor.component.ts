@@ -7,7 +7,7 @@ import { ModalService } from 'src/app/services/modal/modal.service';
 @Component({
   selector: 'app-post-editor',
   templateUrl: './post-editor.component.html',
-  styleUrls: ['./post-editor.component.less'],
+  styleUrls: ['./post-editor.component.scss'],
 })
 export class PostEditorComponent implements OnInit {
   blogPost: BlogPost;

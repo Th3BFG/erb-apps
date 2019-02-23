@@ -8,7 +8,7 @@ import { PostEditorComponent } from './post-editor/post-editor.component';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.less'],
+  styleUrls: ['./blog.component.scss'],
 })
 export class BlogComponent implements OnInit {
   _page = 1;

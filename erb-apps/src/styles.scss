@@ -1,0 +1,4 @@
+@import "./assets/theme.scss";
+
+@include mat-core();
+@include angular-material-theme($erb-theme);
