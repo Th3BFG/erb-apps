@@ -28,7 +28,7 @@ import { LoginComponent } from './login/login.component';
     MatModule,
     NgxPaginationModule
   ],
-  entryComponents: [AppComponent, PostEditorComponent],
+  entryComponents: [AppComponent, LoginComponent, PostEditorComponent],
   declarations: [
     AppComponent,
     HeaderComponent,
