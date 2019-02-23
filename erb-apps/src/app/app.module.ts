@@ -16,7 +16,7 @@ import { PostEditorComponent } from './blog/post-editor/post-editor.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalService } from './services/modal/modal.service';
 import { DomService } from './services/dom/dom.service';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './user/login/login.component';
 
 @NgModule({
   imports: [

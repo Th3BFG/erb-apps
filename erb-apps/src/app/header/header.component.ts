@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalService } from '../services/modal/modal.service';
-import { LoginComponent } from '../login/login.component';
+import { LoginComponent } from '../user/login/login.component';
 
 @Component({
   selector: 'app-header',
