@@ -17,6 +17,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { ModalService } from './services/modal/modal.service';
 import { DomService } from './services/dom/dom.service';
 import { LoginComponent } from './user/login/login.component';
+import { UserService } from './services/user/user.service';
 
 @NgModule({
   imports: [
@@ -39,6 +40,6 @@ import { LoginComponent } from './user/login/login.component';
     LoginComponent
   ],
   bootstrap: [AppComponent],
-  providers: [BlogService, ModalService, DomService, HttpClient]
+  providers: [BlogService, ModalService, DomService, HttpClient, UserService]
 })
 export class AppModule { }
