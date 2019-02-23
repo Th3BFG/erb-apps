@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogPost } from '../models/blogpost';
 import { BlogService } from '../services/blog/blog.service';
-import { Router } from '@angular/router';
 import { ModalService } from '../services/modal/modal.service';
 import { PostEditorComponent } from './post-editor/post-editor.component';
 
